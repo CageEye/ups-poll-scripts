@@ -6,7 +6,7 @@ This project provides scripts to temporarily increase the polling interval for U
 ## Scripts
 
 ### `grafana_poll_faster.sh`
-A script to configure NUT server, Prometheus, and Grafana for high-frequency UPS voltage data polling.
+- A script to configure NUT server, Prometheus, and Grafana for high-frequency UPS voltage data polling (once per second).
 
 #### Usage
 - Enable faster polling:
@@ -19,13 +19,13 @@ A script to configure NUT server, Prometheus, and Grafana for high-frequency UPS
 ```
 
 ### `local_poll.sh`
-A script to poll local UPS voltage metrics and log changes efficiently.
+- A script to poll local UPS voltage metrics and log changes.
 
 #### Features
 
-Polls the /ups_metrics endpoint every 0.04 seconds
-Logs voltage data to /tmp/ directory
-Records only voltage changes to minimize data storage
+- Polls the /ups_metrics endpoint every 0.04 seconds
+- Logs voltage data to /tmp/ directory
+- Records only voltage changes to minimize data storage
 
 #### Usage
 
@@ -39,19 +39,19 @@ Run in background for one hour:
 ./local_poll.sh &
 ```
 
-Specify custom polling duration (in seconds):
+Specify custom polling duration (in seconds) and run in the background:
 ```bash
 ./local_poll.sh 3600 &
 ```
 ## Requirements
 
-Requires access to local UPS metrics endpoint
-NUT server
-Prometheus
-Grafana
+- Requires access to local UPS metrics endpoint
+- NUT server
+- Prometheus
+- Grafana
 
 ## Notes
 
-Designed for temporary, high-frequency monitoring
-Helps track rapid voltage changes
+- Designed for temporary, high-frequency monitoring
+- Helps track rapid voltage changes
 
